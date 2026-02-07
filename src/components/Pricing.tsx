@@ -130,7 +130,7 @@ export default function Pricing() {
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start gap-2">
                     <svg
-                      className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
+                      className={`w-5 h-5 mt-0.5 shrink-0 ${
                         plan.highlighted ? 'text-blue-200' : 'text-green-500'
                       }`}
                       fill="none"
