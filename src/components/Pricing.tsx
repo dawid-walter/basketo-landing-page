@@ -66,13 +66,24 @@ export default function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-bg-primary relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-15" style={{ backgroundImage: 'url(/bg-pattern-circuit.png)', backgroundRepeat: 'repeat', backgroundSize: '900px' }}></div>
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-bg-primary via-dark-bg-secondary to-dark-bg-primary"></div>
+      <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-electric-cyan/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-electric-green/5 rounded-full blur-3xl"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Simple, Transparent Pricing
+          <h2 className="text-4xl sm:text-5xl font-bold font-heading text-dark-text-bright mb-4">
+            Simple,{" "}
+            <span className="text-electric-cyan">
+              Transparent
+            </span>{" "}
+            Pricing
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-dark-text-secondary max-w-2xl mx-auto">
             Start free, scale as you grow. No hidden fees.
           </p>
         </div>
@@ -83,12 +94,12 @@ export default function Pricing() {
               key={index}
               className={`rounded-2xl p-8 ${
                 plan.highlighted
-                  ? 'bg-primary text-white shadow-2xl scale-105 border-4 border-blue-400'
-                  : 'bg-white shadow-lg hover:shadow-xl'
-              } transition-all duration-300 hover:-translate-y-1 relative`}
+                  ? 'bg-dark-bg-card border-2 border-electric-cyan shadow-glow-cyan'
+                  : 'bg-dark-bg-card border border-dark-bg-tertiary hover:border-electric-cyan/50'
+              } transition-all duration-300 hover:-translate-y-2 hover:shadow-glow-cyan relative group`}
             >
               {plan.highlighted && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-sm font-bold">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-electric text-dark-bg-primary px-4 py-1 rounded-full text-sm font-bold shadow-glow-cyan">
                   MOST POPULAR
                 </div>
               )}
@@ -96,31 +107,27 @@ export default function Pricing() {
               <div className="mb-6">
                 <h3
                   className={`text-2xl font-bold mb-2 ${
-                    plan.highlighted ? 'text-white' : 'text-gray-900'
-                  }`}
+                    plan.highlighted ? 'text-electric-cyan' : 'text-dark-text-bright'
+                  } group-hover:text-electric-cyan transition-colors duration-300`}
                 >
                   {plan.name}
                 </h3>
                 <div className="flex items-baseline gap-1 mb-2">
                   <span
                     className={`text-4xl font-bold ${
-                      plan.highlighted ? 'text-white' : 'text-gray-900'
+                      plan.highlighted ? 'text-electric-cyan' : 'text-dark-text-bright'
                     }`}
                   >
                     {plan.price}
                   </span>
                   <span
-                    className={`text-sm ${
-                      plan.highlighted ? 'text-blue-100' : 'text-gray-500'
-                    }`}
+                    className="text-sm text-dark-text-secondary"
                   >
                     {plan.period}
                   </span>
                 </div>
                 <p
-                  className={`text-sm ${
-                    plan.highlighted ? 'text-blue-100' : 'text-gray-600'
-                  }`}
+                  className="text-sm text-dark-text-secondary"
                 >
                   {plan.description}
                 </p>
@@ -131,7 +138,7 @@ export default function Pricing() {
                   <li key={featureIndex} className="flex items-start gap-2">
                     <svg
                       className={`w-5 h-5 mt-0.5 shrink-0 ${
-                        plan.highlighted ? 'text-blue-200' : 'text-green-500'
+                        plan.highlighted ? 'text-electric-cyan' : 'text-electric-green'
                       }`}
                       fill="none"
                       stroke="currentColor"
@@ -145,9 +152,7 @@ export default function Pricing() {
                       />
                     </svg>
                     <span
-                      className={`text-sm ${
-                        plan.highlighted ? 'text-blue-50' : 'text-gray-600'
-                      }`}
+                      className="text-sm text-dark-text-primary"
                     >
                       {feature}
                     </span>
@@ -156,10 +161,10 @@ export default function Pricing() {
               </ul>
 
               <button
-                className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 ${
+                className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
                   plan.highlighted
-                    ? 'bg-white text-primary hover:bg-gray-100'
-                    : 'bg-primary text-white hover:bg-blue-600'
+                    ? 'bg-gradient-electric hover:shadow-glow-cyan text-dark-bg-primary'
+                    : 'bg-dark-bg-tertiary hover:bg-dark-bg-tertiary/50 text-electric-cyan border border-electric-cyan/50 hover:border-electric-cyan hover:shadow-glow-cyan-sm'
                 }`}
               >
                 {plan.cta}
@@ -169,9 +174,9 @@ export default function Pricing() {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-gray-600">
+          <p className="text-dark-text-secondary">
             All plans include 14-day free trial. No credit card required.{' '}
-            <a href="#" className="text-primary hover:underline font-semibold">
+            <a href="#" className="text-electric-cyan hover:text-electric-green font-semibold transition-colors duration-300">
               Compare plans in detail
             </a>
           </p>

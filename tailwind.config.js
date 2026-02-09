@@ -7,55 +7,37 @@ export default {
   theme: {
     extend: {
       colors: {
-        basketo: {
-          // Primary Brand Colors
-          primary: {
-            DEFAULT: '#3B82F6',
-            dark: '#2563EB',
-            light: '#60A5FA',
-            50: '#EFF6FF',
-            100: '#DBEAFE',
-          },
-          // Accent Colors
-          accent: {
-            DEFAULT: '#8B5CF6',
-            dark: '#7C3AED',
-            light: '#A78BFA',
-          },
-          // Semantic Colors
-          success: {
-            DEFAULT: '#10B981',
-            dark: '#059669',
-            light: '#34D399',
-          },
-          warning: {
-            DEFAULT: '#F59E0B',
-            dark: '#D97706',
-            light: '#FBBF24',
-          },
-          error: {
-            DEFAULT: '#EF4444',
-            dark: '#DC2626',
-            light: '#F87171',
-          },
-        },
-        // Keep 'primary' alias for backward compatibility
-        primary: '#3B82F6',
+        'dark-bg-primary': '#0a0a0a',
+        'dark-bg-secondary': '#121212',
+        'dark-bg-tertiary': '#1a1a1a',
+        'dark-bg-card': '#1e1e1e',
+        'dark-text-primary': '#e0e0e0',
+        'dark-text-secondary': '#a0a0a0',
+        'dark-text-bright': '#f5f5f5',
+        'electric-cyan': '#00f0ff',
+        'electric-green': '#00ff88',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        heading: ['Inter', 'system-ui', 'sans-serif'],
-      },
-      borderRadius: {
-        'basketo': '0.5rem',
-        'basketo-lg': '0.75rem',
-        'basketo-xl': '1rem',
+        heading: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        'basketo-sm': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-        'basketo': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-        'basketo-md': '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-        'basketo-lg': '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
+        'glow-cyan': '0 0 20px rgba(0, 240, 255, 0.5), 0 0 40px rgba(0, 240, 255, 0.3)',
+        'glow-green': '0 0 20px rgba(0, 255, 136, 0.5), 0 0 40px rgba(0, 255, 136, 0.3)',
+        'glow-cyan-sm': '0 0 10px rgba(0, 240, 255, 0.4)',
+        'glow-green-sm': '0 0 10px rgba(0, 255, 136, 0.4)',
+      },
+      animation: {
+        'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+      },
+      keyframes: {
+        'glow-pulse': {
+          '0%, 100%': {
+            boxShadow: '0 0 20px rgba(0, 240, 255, 0.5), 0 0 40px rgba(0, 240, 255, 0.3)',
+          },
+          '50%': {
+            boxShadow: '0 0 30px rgba(0, 240, 255, 0.7), 0 0 60px rgba(0, 240, 255, 0.5)',
+          },
+        },
       },
     },
   },

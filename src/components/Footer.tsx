@@ -68,19 +68,23 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-dark-bg-secondary border-t border-dark-bg-tertiary relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-electric-cyan/5 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-electric-green/5 rounded-full blur-3xl"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="bg-primary w-10 h-10 rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <span className="text-2xl font-bold text-white">Basketo</span>
+              <img
+                src="/logo.png"
+                alt="Basketo Logo"
+                className="w-10 h-10"
+              />
+              <span className="text-2xl font-bold font-heading text-electric-cyan">Basketo</span>
             </div>
-            <p className="text-gray-400 mb-6 max-w-xs">
+            <p className="text-dark-text-secondary mb-6 max-w-xs">
               E-commerce made simple. Add a shopping cart to your website in minutes, not days.
             </p>
             <div className="flex gap-4">
@@ -88,7 +92,7 @@ export default function Footer() {
                 <a
                   key={social.name}
                   href={social.href}
-                  className="text-gray-400 hover:text-primary transition-colors duration-200"
+                  className="text-dark-text-secondary hover:text-electric-cyan transition-all duration-300 hover:scale-110"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -99,13 +103,13 @@ export default function Footer() {
 
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="text-white font-semibold mb-4">{category}</h3>
+              <h3 className="text-dark-text-bright font-semibold mb-4">{category}</h3>
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-400 hover:text-primary transition-colors duration-200"
+                      className="text-dark-text-secondary hover:text-electric-cyan transition-colors duration-300"
                     >
                       {link.name}
                     </a>
@@ -116,19 +120,19 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-gray-800 pt-8">
+        <div className="border-t border-dark-bg-tertiary pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
+            <p className="text-dark-text-secondary text-sm">
               Copyright &copy; {currentYear} Basketo. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors duration-200">
+              <a href="#" className="text-dark-text-secondary hover:text-electric-cyan transition-colors duration-300">
                 Status
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors duration-200">
+              <a href="#" className="text-dark-text-secondary hover:text-electric-cyan transition-colors duration-300">
                 Security
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors duration-200">
+              <a href="#" className="text-dark-text-secondary hover:text-electric-cyan transition-colors duration-300">
                 Sitemap
               </a>
             </div>

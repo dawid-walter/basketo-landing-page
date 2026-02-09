@@ -21,14 +21,20 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50">
+    <nav className="bg-dark-bg-secondary/95 backdrop-blur-lg border-b border-dark-bg-card shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="shrink-0">
-            <a href="#" className="flex items-center gap-2">
-              <div className="text-2xl">🛒</div>
-              <span className="text-2xl font-bold text-primary">Basketo</span>
+            <a href="#" className="flex items-center gap-2 group">
+              <img
+                src="/logo.png"
+                alt="Basketo Logo"
+                className="w-10 h-10 transition-transform group-hover:scale-110"
+              />
+              <span className="text-2xl font-bold font-heading text-electric-cyan">
+                Basketo
+              </span>
             </a>
           </div>
 
@@ -42,9 +48,10 @@ export default function Navigation() {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer"
+                className="text-dark-text-secondary hover:text-electric-cyan font-medium transition-colors cursor-pointer relative group"
               >
                 {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-electric group-hover:w-full transition-all duration-300"></span>
               </a>
             ))}
           </div>
@@ -57,7 +64,7 @@ export default function Navigation() {
                 e.preventDefault();
                 scrollToSection('#demo');
               }}
-              className="text-primary hover:text-blue-600 font-semibold transition-colors cursor-pointer"
+              className="text-electric-cyan hover:text-electric-green font-semibold transition-colors cursor-pointer"
             >
               Try Demo
             </a>
@@ -67,7 +74,7 @@ export default function Navigation() {
                 e.preventDefault();
                 scrollToSection('#pricing');
               }}
-              className="bg-primary hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg transition-colors cursor-pointer"
+              className="bg-gradient-electric hover:shadow-glow-cyan text-dark-bg-primary font-semibold px-6 py-2 rounded-lg transition-all cursor-pointer"
             >
               Get Started
             </a>
@@ -77,7 +84,7 @@ export default function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-primary focus:outline-none"
+              className="text-dark-text-secondary hover:text-electric-cyan focus:outline-none transition-colors"
             >
               <svg
                 className="w-6 h-6"
@@ -107,7 +114,7 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="md:hidden py-4 border-t border-dark-bg-card">
             <div className="flex flex-col space-y-3">
               {navItems.map((item) => (
                 <a
@@ -117,19 +124,19 @@ export default function Navigation() {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className="text-gray-700 hover:text-primary font-medium transition-colors px-2 py-2 hover:bg-gray-50 rounded cursor-pointer"
+                  className="text-dark-text-secondary hover:text-electric-cyan font-medium transition-colors px-2 py-2 hover:bg-dark-bg-card rounded cursor-pointer"
                 >
                   {item.label}
                 </a>
               ))}
-              <div className="pt-3 border-t border-gray-200 flex flex-col gap-2">
+              <div className="pt-3 border-t border-dark-bg-card flex flex-col gap-2">
                 <a
                   href="#demo"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection('#demo');
                   }}
-                  className="text-center text-primary hover:text-blue-600 font-semibold py-2 hover:bg-gray-50 rounded transition-colors cursor-pointer"
+                  className="text-center text-electric-cyan hover:text-electric-green font-semibold py-2 hover:bg-dark-bg-card rounded transition-colors cursor-pointer"
                 >
                   Try Demo
                 </a>
@@ -139,7 +146,7 @@ export default function Navigation() {
                     e.preventDefault();
                     scrollToSection('#pricing');
                   }}
-                  className="text-center bg-primary hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg transition-colors cursor-pointer"
+                  className="text-center bg-gradient-electric hover:shadow-glow-cyan text-dark-bg-primary font-semibold px-6 py-2 rounded-lg transition-all cursor-pointer"
                 >
                   Get Started
                 </a>

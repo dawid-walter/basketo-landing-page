@@ -75,13 +75,22 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section id="features" className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-bg-secondary relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'url(/bg-pattern-circuit.png)', backgroundRepeat: 'repeat', backgroundSize: '800px' }}></div>
+      {/* Background Effects */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-electric-green/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-electric-cyan/5 rounded-full blur-3xl"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Everything You Need to Sell Online
+          <h2 className="text-4xl sm:text-5xl font-bold font-heading text-dark-text-bright mb-4">
+            Everything You Need to{" "}
+            <span className="text-electric-cyan">
+              Sell Online
+            </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-dark-text-secondary max-w-2xl mx-auto">
             Powerful features that don't require a developer to set up
           </p>
         </div>
@@ -90,15 +99,15 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="bg-dark-bg-card rounded-xl p-6 border border-dark-bg-tertiary hover:border-electric-cyan/50 shadow-lg hover:shadow-glow-cyan transition-all duration-300 hover:-translate-y-2 group"
             >
-              <div className="bg-blue-50 w-16 h-16 rounded-lg flex items-center justify-center text-primary mb-4">
+              <div className="bg-gradient-to-br from-electric-cyan/10 to-electric-green/10 w-16 h-16 rounded-lg flex items-center justify-center text-electric-cyan group-hover:text-electric-green mb-4 transition-all duration-300 group-hover:shadow-glow-cyan-sm">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-xl font-bold text-dark-text-bright mb-3 group-hover:text-electric-cyan transition-colors duration-300">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-dark-text-secondary leading-relaxed">
                 {feature.description}
               </p>
             </div>

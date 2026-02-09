@@ -48,13 +48,18 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-4xl mx-auto">
+    <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-bg-secondary relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-15" style={{ backgroundImage: 'url(/bg-pattern-grid.png)', backgroundRepeat: 'repeat', backgroundSize: '700px' }}></div>
+      <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Frequently Asked Questions
+          <h2 className="text-4xl sm:text-5xl font-bold font-heading text-dark-text-bright mb-4">
+            Frequently Asked{" "}
+            <span className="text-electric-cyan">
+              Questions
+            </span>
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-dark-text-secondary">
             Everything you need to know about Basketo
           </p>
         </div>
@@ -63,17 +68,17 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-gray-50 rounded-xl overflow-hidden border-2 border-transparent hover:border-blue-100 transition-all duration-200"
+              className="bg-dark-bg-card rounded-xl overflow-hidden border border-dark-bg-tertiary hover:border-electric-cyan/50 transition-all duration-300 group"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-gray-100 transition-colors duration-200"
+                className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-dark-bg-tertiary/50 transition-colors duration-300"
               >
-                <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                <h3 className="text-lg font-semibold text-dark-text-bright group-hover:text-electric-cyan pr-4 transition-colors duration-300">
                   {faq.question}
                 </h3>
                 <svg
-                  className={`w-6 h-6 text-primary shrink-0 transition-transform duration-200 ${
+                  className={`w-6 h-6 text-electric-cyan shrink-0 transition-transform duration-300 ${
                     openIndex === index ? 'transform rotate-180' : ''
                   }`}
                   fill="none"
@@ -89,8 +94,8 @@ export default function FAQ() {
                 </svg>
               </button>
               {openIndex === index && (
-                <div className="px-6 pb-5">
-                  <p className="text-gray-600 leading-relaxed">
+                <div className="px-6 pb-5 animate-in fade-in duration-300">
+                  <p className="text-dark-text-primary leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
@@ -99,17 +104,17 @@ export default function FAQ() {
           ))}
         </div>
 
-        <div className="mt-12 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8 text-center border border-blue-100">
-          <h3 className="text-2xl font-bold text-gray-900 mb-3">
+        <div className="mt-12 bg-dark-bg-card rounded-xl p-8 text-center border border-electric-cyan/20 hover:border-electric-cyan/40 transition-all duration-300">
+          <h3 className="text-2xl font-bold text-dark-text-bright mb-3">
             Still have questions?
           </h3>
-          <p className="text-gray-600 mb-6">
+          <p className="text-dark-text-secondary mb-6">
             Our support team is here to help you get started
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:support@basketo.com"
-              className="bg-primary hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 inline-flex items-center justify-center gap-2"
+              className="bg-gradient-electric hover:shadow-glow-cyan text-dark-bg-primary font-semibold px-6 py-3 rounded-lg transition-all duration-300 inline-flex items-center justify-center gap-2"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -118,7 +123,7 @@ export default function FAQ() {
             </a>
             <a
               href="#"
-              className="bg-white hover:bg-gray-100 text-gray-900 font-semibold px-6 py-3 rounded-lg border-2 border-gray-300 transition-all duration-200 inline-flex items-center justify-center gap-2"
+              className="bg-dark-bg-card hover:bg-dark-bg-tertiary text-electric-cyan font-semibold px-6 py-3 rounded-lg border-2 border-electric-cyan/50 hover:border-electric-cyan transition-all duration-300 hover:shadow-glow-cyan-sm inline-flex items-center justify-center gap-2"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
